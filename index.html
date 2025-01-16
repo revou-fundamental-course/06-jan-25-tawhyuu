@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>My Website</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <!-- Navigation -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <a href="#">
+            <img src="img/logo.png" alt="Ristek" class="circular-logo">
+          </a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#" class="left-rounded">Home</a></li>
+          <li><a href="#our-headquarter">Our Profile</a></li>
+          <li><a href="#role-details">Portofolio</a></li>
+          <li><a href="#message-us" class="right-rounded">Message Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Content -->
+    <main>
+      <section class="welcome-section">
+        <h1 id="welcome-text">Hi User, Welcome To Website</h1>
+        <p>Ini adalah website latihan pertama</p>
+      </section>
+      
+      <!-- Photo Banners Slide -->
+      <section>
+        <div class="banner">
+          <img class="imgPhotoBanner" src="img/img1.jpg" alt="Kyoto">
+          <img class="imgPhotoBanner" src="img/img2.jpg" alt="Shizouka">
+          <img class="imgPhotoBanner" src="img/img3.jpg" alt="Hiroshima">
+          <img class="imgPhotoBanner" src="img/img4.jpg" alt="Kiyomizu">
+        </div>
+      </section>
+
+      <!-- Headquarters -->
+      <section class="hq">
+        <div class="container">
+          <div class="header-headquarter">
+           <h1 id="our-headquarter">Our Headquarter</h1>
+          </div>
+
+          <div class="headquarters">
+           <div>
+            <img alt="Image of Tokyo" src="img/hq1.jpg"/>
+            <p>Tokyo</p>
+           </div>
+           <div>
+            <img alt="Image of Kyoto" src="img/hq2.jpg"/>
+            <p>Kyoto</p>
+           </div>
+           <div>
+            <img alt="Image of Nagoya" src="img/hq3.jpg"/>
+            <p>Nagoya</p>
+           </div>
+          </div>
+      </section>
+
+      <!-- Portofolio -->
+      <section class="about-me">
+        <div class="container">
+          <h1 class="about-header">Hi, I'm Wahyuga. Nice to meet you.</h1>
+          <p class="about-description">
+            Passionate and committed learner deeply interested in technology, programming, and business with proficient public speaking skills . I embrace a growth-oriented attitude, always on the lookout for chances to improve my abilities and contribute positively. My background includes expertise in programming, data science, analytics, and mathematics.
+          </p>
+          
+          <div class="roles-container">
+            <div class="role-card">
+              <div class="role-icon">
+                <img src="img/2.jpg" alt="Designer icon" class="icon">
+              </div>
+              <h2>Designer</h2>
+              <p class="role-description">I value simple content structure, clean design patterns, and thoughtful interactions.</p>
+              <div class="role-details">
+                <h3>Things I enjoy designing:</h3>
+                <p>UX, UI, Web, Apps, Logos</p>
+              </div>
+            </div>
+      
+            <div class="role-card">
+              <div class="role-icon">
+                <img src="img/1.jpg" alt="Frontend Developer icon" class="icon">
+              </div>
+              <h2>Frontend Developer</h2>
+              <p class="role-description">I like to code things from scratch, and enjoy bringing ideas to life in the browser.</p>
+              <div class="role-details">
+                <h3>Languages I speak:</h3>
+                <p>HTML, Pug, Slim, CSS, Sass, Git</p>
+              </div>
+            </div>
+      
+            <div class="role-card">
+              <div class="role-icon">
+                <img src="img/3.jpg" alt="Mentor icon" class="icon">
+              </div>
+              <h2>Mentor</h2>
+              <p class="role-description">I genuinely care about people, and enjoy helping them work on their craft.</p>
+              <div class="role-details">
+                <h3>Experiences I draw from:</h3>
+                <p>UX/UI, Product design, Freelancing</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="message-section">
+        <div class="container">
+          <header>
+            <h1 class="message-us" id="message-us">MESSAGE US</h1>
+          </header>
+            
+          <div class="form-container">
+              <section class="form-section">
+                <form id="messageForm" onsubmit="return validateForm(event)">
+                  <div class="form-group">
+                    <label for="nama">Nama:</label>
+                    <input type="text" id="nama" name="nama" placeholder="Nama">
+                    <span class="error" id="namaError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="tanggal">Tanggal Lahir:</label>
+                    <input type="date" id="tanggal" name="tanggal">
+                    <span class="error" id="tanggalError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Jenis Kelamin:</label>
+                    <div class="radio-group">
+                        <input type="radio" id="laki" name="jenisKelamin" value="laki-laki">
+                        <label for="laki">Laki-laki</label>
+                        <input type="radio" id="perempuan" name="jenisKelamin" value="perempuan">
+                        <label for="perempuan">Perempuan</label>
+                    </div>
+                    <span class="error" id="jenisKelaminError"></span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="pesan">Pesan:</label>
+                    <textarea id="pesan" name="pesan" placeholder="pesan"></textarea>
+                    <span class="error" id="pesanError"></span>
+                  </div>
+
+                  <button type="submit">Submit</button>
+                </form>
+              </section>
+            <section class="output-section">
+              <div id="output" class="output-container">
+                <h2>Nama: <span id="outputNama"></span></h2>
+                <h2>Tanggal Lahir: <span id="outputTanggal"></span></h2>
+                <h2>Jenis Kelamin: <span id="outputJenisKelamin"></span></h2>
+                <h2>Pesan: <span id="outputPesan"></span></h2>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="js/script.js"></script>
+  </body>
+  <footer>
+    <p>Created by Tangguh Ambha Wahyuga</p>
+  </footer>
+</html>
